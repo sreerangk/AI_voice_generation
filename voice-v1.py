@@ -4,75 +4,24 @@ import os
 
 
 SCRIPT = """
-Okay so let me just be honest with you.
+What if I told you… saving money might be the reason you’re still broke?
 
-Most people who want to get rich... they're looking for the one thing. The one trick. The shortcut.
-And that's exactly why they stay broke.
+Yeah. I said it.
 
-So I'm gonna walk you through every real way people are actually making money in 2026.
-Not theory. Not motivation. Just what's actually working.
+Everywhere you look, people are screaming —
+“Save 10% of your income.”
+“Cut your coffee.”
+“Don’t spend.”
+“Don’t risk.”
 
-Let's start with the obvious one — a job. But not just any job.
-There are people making 80, 90, a hundred thousand dollars a year doing cloud computing, cybersecurity, sales.
-High-income skills. You learn them, you get paid for them. Simple.
-The problem is most people pick careers based on what sounds cool, not what pays.
+But let me ask you something honestly…
 
-Next — freelancing.
-If you can edit videos, run ads, write emails that actually sell things, or build websites — companies will pay you.
-Not because you have a degree. Because you can do the thing they need done.
-I know a guy who learned video editing in four months. Now he makes six thousand dollars a month working from his apartment.
-That's it. No magic.
+Have you ever saved your way into wealth?
 
-Then there's starting a business.
-And before you roll your eyes — I'm not talking about some big startup with investors.
-I mean a small, boring business that solves one problem.
-Pressure washing. HVAC. A bookkeeping service. A cleaning company.
-These are not glamorous. But a good cleaning business in a mid-size city can clear two hundred thousand dollars a year.
-Nobody talks about this because it's not sexy. But it works.
+Or are you just surviving… slowly?
 
-Content creation is real, but people misunderstand it.
-You don't blow up and suddenly get rich. That's not how it works.
-What actually happens is — you build an audience around something specific, and then you sell them something.
-A course. A service. A product. A membership.
-The content is just how people find you. The money comes from what you're actually selling.
-
-Real estate. Look, I know — everyone says real estate.
-But the reason everyone says it is because it actually works over time.
-Buy a property. Rent it out. The tenant pays your mortgage. You build equity.
-It's slow. It's not exciting. But in ten years? That property could be worth twice what you paid.
-The hard part is getting that first one. After that it gets easier.
-
-Stock market. Index funds specifically.
-You put money in every single month, you don't touch it, and you let time do the work.
-This is not how you get rich fast. This is how you don't end up broke at sixty.
-Everyone should be doing this. Most people aren't.
-
-Then there's buying websites or small businesses.
-This one flies under the radar. People sell websites that already make money —
-five hundred dollars a month, a thousand dollars a month — and you can buy them for two or three times their yearly revenue.
-You buy it, you run it, you improve it, you sell it for more.
-It's like real estate but on the internet.
-
-Crypto. I'll keep this short.
-Some people made a lot of money. Some people lost everything.
-If you don't understand what you're buying, you're not investing — you're gambling.
-Learn it properly or stay out.
-
-And then there's sales.
-Honestly one of the most underrated ways to make real money.
-Commission-based sales — real estate, software, insurance, cars.
-If you're good at it, there's no ceiling on what you can earn.
-The best salespeople at tech companies make more than the engineers.
-
-Here's the thing nobody tells you though.
-
-It's not really about which path you pick.
-It's about how long you stick with it.
-Most people switch every six months because they're not seeing results fast enough.
-But the people who actually get rich? They picked something and stayed with it for years.
-
-That's the whole thing. That's actually it.
-Pick one. Go deep. Don't quit when it gets boring.
+Today I’m going to tell you a story.
+And by the end of it, you might completely change how you think about money.
 """
 
 VOICE = "en-US-AndrewMultilingualNeural"   # Deep, confident male voice
@@ -83,17 +32,15 @@ VOICE = "en-US-AndrewMultilingualNeural"   # Deep, confident male voice
 #   "en-US-JennyNeural"            – Friendly female
 #   "en-US-AriaNeural"             – Expressive female
 
-OUTPUT_FILE = "rich_in_2026_voiceover.mp3"
-SUBTITLE_FILE = "rich_in_2026_subtitles.vtt"  # Optional WebVTT subtitles
+OUTPUT_FILE = "1.mp3"
+SUBTITLE_FILE = "1.vtt"  # Optional WebVTT subtitles
 
-RATE   = "+5%"   # Speed: -50% (slow) to +100% (fast). 0% = default
+RATE   = "-10%"   # Speed: -50% (slow) to +100% (fast). 0% = default
 VOLUME = "+0%"   # Volume: -50% to +50%
 PITCH  = "+0Hz"  # Pitch: -50Hz to +50Hz
 
 
-# ─────────────────────────────────────────────
-#  MAIN FUNCTIONS
-# ─────────────────────────────────────────────
+
 async def generate_voiceover():
     """Generate the voiceover MP3 file."""
 
