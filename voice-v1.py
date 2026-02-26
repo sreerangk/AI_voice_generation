@@ -4,33 +4,10 @@ import os
 
 
 SCRIPT = """
-Ask yourself:
+At 27... Aarav had everything people said should make him happy. 
 
-Are you protecting money…
-
-Or are you protecting fear?
-
-Because one day, life will test you.
-
-And when it does…
-
-Your bank balance won’t save you.
-
-Your skills will.
-
-If this made you uncomfortable…
-
-Good.
-
-Growth always does.
-
-Now decide—
-
-Will you keep saving to feel safe?
-
-Or will you invest to become unstoppable?
+A job in the city... a decent salary... and a future... that looked, "secure."
 """
-
 VOICE = "en-GB-RyanNeural"   # Deep, confident male voice
 # Other great options:
 #   "en-US-GuyNeural"  - Classic American male
@@ -44,9 +21,9 @@ VOICE = "en-GB-RyanNeural"   # Deep, confident male voice
 OUTPUT_FILE = "8.mp3"
 SUBTITLE_FILE = "5org.srt"  # Optional WebVTT subtitles
 
-RATE   = "-15%"   # Speed: -50% (slow) to +100% (fast). 0% = default
+RATE   = "-20%"   # Speed: -50% (slow) to +100% (fast). 0% = default
 VOLUME = "+0%"   # Volume: -50% to +50%
-PITCH  = "+5Hz"  # Pitch: -50Hz to +50Hz
+PITCH  = "-7Hz"  # Pitch: -50Hz to +50Hz
 
 
 
@@ -54,9 +31,9 @@ async def generate_voiceover():
     """Generate the voiceover MP3 file."""
 
     print("─" * 45)
-
+    formatted_text = SCRIPT.strip().replace(". ", "... ")
     communicate = edge_tts.Communicate(
-        text=SCRIPT.strip(),
+        text=formatted_text,
         voice=VOICE,
         rate=RATE,
         volume=VOLUME,
