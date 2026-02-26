@@ -4,36 +4,45 @@ import os
 
 
 SCRIPT = """
-What if I told you… saving money might be the reason you’re still broke?
+Ask yourself:
 
-Yeah. I said it.
+Are you protecting money…
 
-Everywhere you look, people are screaming —
-“Save 10% of your income.”
-“Cut your coffee.”
-“Don’t spend.”
-“Don’t risk.”
+Or are you protecting fear?
 
-But let me ask you something honestly…
+Because one day, life will test you.
 
-Have you ever saved your way into wealth?
+And when it does…
 
-Or are you just surviving… slowly?
+Your bank balance won’t save you.
 
-Today I’m going to tell you a story.
-And by the end of it, you might completely change how you think about money.
+Your skills will.
+
+If this made you uncomfortable…
+
+Good.
+
+Growth always does.
+
+Now decide—
+
+Will you keep saving to feel safe?
+
+Or will you invest to become unstoppable?
 """
 
-VOICE = "en-US-AndrewMultilingualNeural"   # Deep, confident male voice
+VOICE = "en-GB-RyanNeural"   # Deep, confident male voice
 # Other great options:
-#   "en-US-GuyNeural"              – Classic American male
+#   "en-US-GuyNeural" 
+#   "en-US-AndrewMultilingualNeural"
+#    – Classic American male
 #   "en-US-ChristopherNeural"      – Professional male
 #   "en-GB-RyanNeural"             – British male
 #   "en-US-JennyNeural"            – Friendly female
 #   "en-US-AriaNeural"             – Expressive female
 
-OUTPUT_FILE = "1.mp3"
-SUBTITLE_FILE = "1.vtt"  # Optional WebVTT subtitles
+OUTPUT_FILE = "8.mp3"
+SUBTITLE_FILE = "5org.srt"  # Optional WebVTT subtitles
 
 RATE   = "-10%"   # Speed: -50% (slow) to +100% (fast). 0% = default
 VOLUME = "+0%"   # Volume: -50% to +50%
@@ -58,11 +67,7 @@ async def generate_voiceover():
     size_mb = os.path.getsize(OUTPUT_FILE) / (1024 * 1024)
     print(f"Voiceover saved → {OUTPUT_FILE}  ({size_mb:.2f} MB)")
 
-
 async def generate_with_subtitles():
-    """Generate MP3 + WebVTT subtitle file simultaneously."""
-    print(f" Generating audio + subtitles …")
-
     communicate = edge_tts.Communicate(
         text=SCRIPT.strip(),
         voice=VOICE,
@@ -77,15 +82,13 @@ async def generate_with_subtitles():
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
                 audio_file.write(chunk["data"])
-            elif chunk["type"] == "WordBoundary":
+            elif chunk["type"] == "SentenceBoundary":
                 submaker.feed(chunk)
 
-    with open(SUBTITLE_FILE, "w", encoding="utf-8") as vtt_file:
-        vtt_file.write(submaker.get_srt())   # use .get_srt() for .srt format
+    with open(SUBTITLE_FILE, "w", encoding="utf-8") as f:
+        f.write(submaker.get_srt())
 
-    size_mb = os.path.getsize(OUTPUT_FILE) / (1024 * 1024)
-    print(f"Audio saved    → {OUTPUT_FILE}  ({size_mb:.2f} MB)")
-    print(f"Subtitles saved → {SUBTITLE_FILE}")
+    print("Done.")
 
 
 async def list_voices(language_filter: str = "en-"):
