@@ -33,9 +33,9 @@ Or will you invest to become unstoppable?
 
 VOICE = "en-GB-RyanNeural"   # Deep, confident male voice
 # Other great options:
-#   "en-US-GuyNeural" 
+#   "en-US-GuyNeural"  - Classic American male
 #   "en-US-AndrewMultilingualNeural"
-#    – Classic American male
+#    en-GB-ThomasNeural
 #   "en-US-ChristopherNeural"      – Professional male
 #   "en-GB-RyanNeural"             – British male
 #   "en-US-JennyNeural"            – Friendly female
@@ -44,9 +44,9 @@ VOICE = "en-GB-RyanNeural"   # Deep, confident male voice
 OUTPUT_FILE = "8.mp3"
 SUBTITLE_FILE = "5org.srt"  # Optional WebVTT subtitles
 
-RATE   = "-10%"   # Speed: -50% (slow) to +100% (fast). 0% = default
+RATE   = "-15%"   # Speed: -50% (slow) to +100% (fast). 0% = default
 VOLUME = "+0%"   # Volume: -50% to +50%
-PITCH  = "+0Hz"  # Pitch: -50Hz to +50Hz
+PITCH  = "+5Hz"  # Pitch: -50Hz to +50Hz
 
 
 
