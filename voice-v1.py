@@ -4,9 +4,10 @@ import os
 
 
 SCRIPT = """
-At 27... Aarav had everything people said should make him happy. 
+Daniel had everything . people say should make you calm.
 
-A job in the city... a decent salary... and a future... that looked, "secure."
+
+
 """
 VOICE = "en-GB-RyanNeural"   # Deep, confident male voice
 # Other great options:
